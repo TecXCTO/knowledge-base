@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  kb:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - SECRET_KEY=super-strong-secret
+      - DATABASE_URL=sqlite:///./kb.db
