@@ -1,9 +1,9 @@
 # # FastAPI entrypoint
 
 from fastapi import FastAPI
-from . import routers
-from .database import engine, Base
-from .models import Base as SQLBase
+import routers
+from database import engine, Base
+from models import Base as SQLBase
 
 # Create tables on startup
 def init_db():
@@ -19,3 +19,4 @@ app.include_router(routers.knowledge.router)
 @app.on_event("startup")
 def on_startup():
     init_db()
+
