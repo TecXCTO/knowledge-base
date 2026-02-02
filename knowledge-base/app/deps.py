@@ -7,7 +7,7 @@ from sqlalchemy.orm import Session
 from jose import JWTError, jwt
 from datetime import datetime, timedelta
 
-from .config import settings
+from config import settings
 import crud, models
 from database import SessionLocal
 
@@ -37,4 +37,5 @@ def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(
     if user is None:
         raise credentials_exception
     return user
+
 
