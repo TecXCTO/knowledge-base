@@ -8,8 +8,8 @@ from jose import JWTError, jwt
 from datetime import datetime, timedelta
 
 from .config import settings
-from . import crud, models
-from .database import SessionLocal
+import crud, models
+from database import SessionLocal
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/token")
 
@@ -37,3 +37,4 @@ def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(
     if user is None:
         raise credentials_exception
     return user
+
