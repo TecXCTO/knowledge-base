@@ -2,11 +2,11 @@
 
 
 from sqlalchemy.orm import Session
-from . import models, schemas
+import models, schemas
 from passlib.context import CryptContext
 from datetime import datetime
 from jose import jwt, JWTError
-from .config import settings
+from config import settings
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
@@ -81,3 +81,4 @@ def delete_entry(db: Session, entry_id: int):
         db.commit()
         return True
     return False
+
