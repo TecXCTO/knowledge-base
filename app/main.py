@@ -3,7 +3,6 @@
 from fastapi import FastAPI
 from . import routers
 # from .routers import routers
-# from database import engine, Base
 from .database import engine # , Base
 from .models import Base as SQLBase
 
@@ -24,4 +23,5 @@ def on_startup():
 
 #if __name__==__main__():
 #    on_startup()
+
 # on_startup()
